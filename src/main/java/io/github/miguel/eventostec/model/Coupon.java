@@ -16,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Coupon {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
     private UUID id;
 
