@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -33,6 +34,12 @@ public class Event {
 
     @Column(name = "event_url")
     private String eventUrl;
+
+    @OneToOne(mappedBy = "event")
+    private Address address;
+
+    @OneToMany(mappedBy = "event")
+    private List<Coupon> coupons;
 
 
 }

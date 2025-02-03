@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name= "cupom")
+@Table(name= "coupon")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,6 +27,6 @@ public class Coupon {
     private Date valid;
 
     @ManyToOne
-    @JoinColumn(name = "id_event")
+    @JoinColumn(name = "event_id")
     private Event event;
 }

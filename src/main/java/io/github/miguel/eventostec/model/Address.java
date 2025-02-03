@@ -11,8 +11,13 @@ import java.util.UUID;
 @Table(name = "address")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Address {
+
+    public Address(String uf, String city, Event event) {
+        this.uf = uf;
+        this.city = city;
+        this.event = event;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,6 +28,6 @@ public class Address {
     private String city;
 
     @OneToOne
-    @JoinColumn(name = "id_event")
+    @JoinColumn(name = "event_id")
     private Event event;
 }
